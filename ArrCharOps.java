@@ -134,10 +134,13 @@ public class ArrCharOps {
         if (arr.length == 0){
             return 0;
         } else {
+            // Horner's Rule
             long res = 0;
-            for (int i = 0; i < arr.length; i++ ){
-                res += arr[i]*Math.pow(7, arr.length-1);
+
+            for (int i = 0; i < arr.length; i++) {
+                res = res * 7 + arr[i];
             }
+
             return res;
         }
     }
