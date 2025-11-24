@@ -93,10 +93,18 @@ public class ArrCharOps {
     /* Returns an array which is the concatanation of the two given arrays.
     */
     public static char[] concat(char[] arr1, char[] arr2) {
-        char [] combinedArr = new char[arr1.length + arr2.length];
-        for (int i = 0; i < arr1.length; i++){
+        char[] combinedArr = new char[arr1.length + arr2.length];
+
+        // arr1
+        for (int i = 0; i < arr1.length; i++) {
             combinedArr[i] = arr1[i];
         }
+
+        // arr2
+        for (int i = 0; i < arr2.length; i++) {
+            combinedArr[arr1.length + i] = arr2[i];
+        }
+
         return combinedArr;
     }
 
@@ -106,11 +114,13 @@ public class ArrCharOps {
      *  characters containing the characters "urge".
      */     
     public static char[] subArray(char[] arr, int beginIndex, int endIndex) {
-        char [] combinedArr = new char[endIndex - beginIndex];
-        for (int i = beginIndex; i < endIndex; i++){
-            combinedArr[i] = arr[i];
+        char[] result = new char[endIndex - beginIndex];
+
+        for (int i = beginIndex; i < endIndex; i++) {
+            result[i - beginIndex] = arr[i];
         }
-        return combinedArr;
+
+        return result;
     }
 
      /** Returns a single integer that represents the given array. This integer is sometimes 
